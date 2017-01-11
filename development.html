@@ -1,0 +1,759 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.7. 开发 · GORM 中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="JasperXu">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="development.html" />
+    
+    
+    <link rel="prev" href="advanced.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.1. 快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database.html">
+            
+                <a href="database.html">
+            
+                    
+                    1.2. 数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="database.html">
+            
+                <a href="database.html#dbc">
+            
+                    
+                    1.2.1. 数据库连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="database.html">
+            
+                <a href="database.html#m">
+            
+                    
+                    1.2.2. 迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    1.3. 模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="models.html">
+            
+                <a href="models.html#md">
+            
+                    
+                    1.3.1. 模型定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="models.html">
+            
+                <a href="models.html#c">
+            
+                    
+                    1.3.2. 约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="associations.html">
+            
+                <a href="associations.html">
+            
+                    
+                    1.3.3. 关联
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="associations.html">
+            
+                <a href="associations.html#bt">
+            
+                    
+                    1.3.3.1 属于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="associations.html">
+            
+                <a href="associations.html#ho">
+            
+                    
+                    1.3.3.2 包含一个
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="associations.html">
+            
+                <a href="associations.html#hm">
+            
+                    
+                    1.3.3.3 包含多个
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="associations.html">
+            
+                <a href="associations.html#mtm">
+            
+                    
+                    1.3.3.4 多对多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="associations.html">
+            
+                <a href="associations.html#p">
+            
+                    
+                    1.3.3.5 多种包含
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="associations.html">
+            
+                <a href="associations.html#am">
+            
+                    
+                    1.3.3.6 关联模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="crud.html">
+            
+                <a href="crud.html">
+            
+                    
+                    1.4. CRUD:读写数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="crud.html">
+            
+                <a href="crud.html#c">
+            
+                    
+                    1.4.1 创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="crud.html">
+            
+                <a href="crud.html#q">
+            
+                    
+                    1.4.2 查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="crud.html">
+            
+                <a href="crud.html#p">
+            
+                    
+                    1.4.3 预加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="crud.html">
+            
+                <a href="crud.html#u">
+            
+                    
+                    1.4.4 更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="crud.html">
+            
+                <a href="crud.html#d">
+            
+                    
+                    1.4.5 删除\/软删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="crud.html">
+            
+                <a href="crud.html#a">
+            
+                    
+                    1.4.6 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="callbacks.html">
+            
+                <a href="callbacks.html">
+            
+                    
+                    1.5. Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    1.6. 高级用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="advanced.html">
+            
+                <a href="advanced.html#eh">
+            
+                    
+                    1.6.1. 错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="advanced.html">
+            
+                <a href="advanced.html#t">
+            
+                    
+                    1.6.2. 事物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="advanced.html">
+            
+                <a href="advanced.html#sb">
+            
+                    
+                    1.6.3. SQL构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="advanced.html">
+            
+                <a href="advanced.html#g">
+            
+                    
+                    1.6.4. 通用数据库接口sql.DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="advanced.html">
+            
+                <a href="advanced.html#cpk">
+            
+                    
+                    1.6.5. 复合主键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="advanced.html">
+            
+                <a href="advanced.html#l">
+            
+                    
+                    1.6.6. 日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="development.html">
+            
+                <a href="development.html">
+            
+                    
+                    1.7. 开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="development.html">
+            
+                <a href="development.html#a">
+            
+                    
+                    1.7.1 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="development.html">
+            
+                <a href="development.html#w">
+            
+                    
+                    1.7.2 写插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    1.8. 更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    1.9. 译者日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.7. 开发</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5F00;&#x53D1;"><a name="&#x5F00;&#x53D1;" class="plugin-anchor" href="#&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;</h1>
+<h2 id="a"><a name="a" class="plugin-anchor" href="#a"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67B6;&#x6784; </h2>
+<p>Gorm&#x4F7F;&#x7528;&#x53EF;&#x94FE;&#x63A5;&#x7684;API&#xFF0C;<code>*gorm.DB</code>&#x662F;&#x94FE;&#x7684;&#x6865;&#x6881;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x94FE;API&#xFF0C;&#x5B83;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<pre><code class="lang-go">db, err := gorm.Open(<span class="hljs-string">&quot;postgres&quot;</span>, <span class="hljs-string">&quot;user=gorm dbname=gorm sslmode=disable&quot;</span>)
+
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x65B0;&#x5173;&#x7CFB;</span>
+db = db.Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>)
+
+<span class="hljs-comment">// &#x8FC7;&#x6EE4;&#x66F4;&#x591A;</span>
+<span class="hljs-keyword">if</span> SomeCondition {
+    db = db.Where(<span class="hljs-string">&quot;age = ?&quot;</span>, <span class="hljs-number">20</span>)
+} <span class="hljs-keyword">else</span> {
+    db = db.Where(<span class="hljs-string">&quot;age = ?&quot;</span>, <span class="hljs-number">30</span>)
+}
+<span class="hljs-keyword">if</span> YetAnotherCondition {
+    db = db.Where(<span class="hljs-string">&quot;active = ?&quot;</span>, <span class="hljs-number">1</span>)
+}
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;GORM&#x5C06;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x7684;<code>*gorm.DB</code>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>*gorm.Scope</code>&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x6267;&#x884C;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;</span>
+db.First(&amp;user)
+</code></pre>
+<p>&#x5E76;&#x4E14;&#x57FA;&#x4E8E;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x5C06;&#x8C03;&#x7528;&#x6CE8;&#x518C;&#x7684;<code>creating</code>, <code>updating</code>, <code>querying</code>, <code>deleting</code>&#x6216;<code>row_querying</code>&#x56DE;&#x8C03;&#x6765;&#x8FD0;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5C06;&#x8C03;&#x7528;<code>querying</code>&#xFF0C;&#x53C2;&#x8003;<a href="callbacks.html#querying-an-object">&#x67E5;&#x8BE2;&#x56DE;&#x8C03;</a></p>
+<h2 id="w"><a name="w" class="plugin-anchor" href="#w"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5199;&#x63D2;&#x4EF6; </h2>
+<p>GORM&#x672C;&#x8EAB;&#x7531;<code>Callbacks</code>&#x63D0;&#x4F9B;&#x652F;&#x6301;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x5B8C;&#x5168;&#x81EA;&#x5B9A;&#x4E49;GORM</p>
+<h3 id="&#x6CE8;&#x518C;&#x65B0;&#x7684;callback"><a name="&#x6CE8;&#x518C;&#x65B0;&#x7684;callback" class="plugin-anchor" href="#&#x6CE8;&#x518C;&#x65B0;&#x7684;callback"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x518C;&#x65B0;&#x7684;callback</h3>
+<pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">updateCreated</span><span class="hljs-params">(scope *Scope)</span></span> {
+    <span class="hljs-keyword">if</span> scope.HasColumn(<span class="hljs-string">&quot;Created&quot;</span>) {
+        scope.SetColumn(<span class="hljs-string">&quot;Created&quot;</span>, NowFunc())
+    }
+}
+
+db.Callback().Create().Register(<span class="hljs-string">&quot;update_created_at&quot;</span>, updateCreated)
+<span class="hljs-comment">// &#x6CE8;&#x518C;Create&#x8FDB;&#x7A0B;&#x7684;&#x56DE;&#x8C03;</span>
+</code></pre>
+<h3 id="&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback"><a name="&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback" class="plugin-anchor" href="#&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback</h3>
+<pre><code class="lang-go">db.Callback().Create().Remove(<span class="hljs-string">&quot;gorm:create&quot;</span>)
+<span class="hljs-comment">// &#x4ECE;Create&#x56DE;&#x8C03;&#x4E2D;&#x5220;&#x9664;`gorm:create`&#x56DE;&#x8C03;</span>
+</code></pre>
+<h3 id="&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback"><a name="&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback" class="plugin-anchor" href="#&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback</h3>
+<pre><code class="lang-go">db.Callback().Create().Replace(<span class="hljs-string">&quot;gorm:create&quot;</span>, newCreateFunction)
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x65B0;&#x51FD;&#x6570;`newCreateFunction`&#x66FF;&#x6362;&#x56DE;&#x8C03;`gorm:create`&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;</span>
+</code></pre>
+<h3 id="&#x6CE8;&#x518C;callback&#x987A;&#x5E8F;"><a name="&#x6CE8;&#x518C;callback&#x987A;&#x5E8F;" class="plugin-anchor" href="#&#x6CE8;&#x518C;callback&#x987A;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x518C;callback&#x987A;&#x5E8F;</h3>
+<pre><code class="lang-go">db.Callback().Create().Before(<span class="hljs-string">&quot;gorm:create&quot;</span>).Register(<span class="hljs-string">&quot;update_created_at&quot;</span>, updateCreated)
+db.Callback().Create().After(<span class="hljs-string">&quot;gorm:create&quot;</span>).Register(<span class="hljs-string">&quot;update_created_at&quot;</span>, updateCreated)
+db.Callback().Query().After(<span class="hljs-string">&quot;gorm:query&quot;</span>).Register(<span class="hljs-string">&quot;my_plugin:after_query&quot;</span>, afterQuery)
+db.Callback().Delete().After(<span class="hljs-string">&quot;gorm:delete&quot;</span>).Register(<span class="hljs-string">&quot;my_plugin:after_delete&quot;</span>, afterDelete)
+db.Callback().Update().Before(<span class="hljs-string">&quot;gorm:update&quot;</span>).Register(<span class="hljs-string">&quot;my_plugin:before_update&quot;</span>, beforeUpdate)
+db.Callback().Create().Before(<span class="hljs-string">&quot;gorm:create&quot;</span>).After(<span class="hljs-string">&quot;gorm:before_create&quot;</span>).Register(<span class="hljs-string">&quot;my_plugin:before_create&quot;</span>, beforeCreate)
+</code></pre>
+<h3 id="&#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;"><a name="&#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;" class="plugin-anchor" href="#&#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;</h3>
+<p>GORM&#x5B9A;&#x4E49;&#x4E86;&#x56DE;&#x8C03;&#x4EE5;&#x6267;&#x884C;&#x5176;CRUD&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x5F00;&#x59CB;&#x7F16;&#x5199;&#x63D2;&#x4EF6;&#x4E4B;&#x524D;&#x68C0;&#x67E5;&#x5B83;&#x4EEC;&#x3002;</p>
+<ul>
+<li><a href="https://github.com/jinzhu/gorm/blob/master/callback_create.go" target="_blank">Create callbacks</a></li>
+<li><a href="https://github.com/jinzhu/gorm/blob/master/callback_update.go" target="_blank">Update callbacks</a></li>
+<li><a href="https://github.com/jinzhu/gorm/blob/master/callback_query.go" target="_blank">Query callbacks</a></li>
+<li><a href="https://github.com/jinzhu/gorm/blob/master/callback_delete.go" target="_blank">Delete callbacks</a></li>
+<li>Row Query callbacks
+Row Query callbacks&#x5C06;&#x5728;&#x8FD0;&#x884C;<code>Row</code>&#x6216;<code>Rows</code>&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6CA1;&#x6709;&#x6CE8;&#x518C;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x56DE;&#x8C03;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">updateTableName</span><span class="hljs-params">(scope *gorm.Scope)</span></span> {
+  scope.Search.Table(scope.TableName() + <span class="hljs-string">&quot;_draft&quot;</span>) <span class="hljs-comment">// append `_draft` to table name</span>
+}
+
+db.Callback().RowQuery().Register(<span class="hljs-string">&quot;publish:update_table_name&quot;</span>, updateTableName)
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; JasperXu 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-01-11 02:47:26
+</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x5F00;&#x53D1;">1. &#x5F00;&#x53D1;</a></li><ul><li><a href="#a">1.1. &#x67B6;&#x6784; </a></li><li><a href="#w">1.2. &#x5199;&#x63D2;&#x4EF6; </a></li><ul><li><a href="#&#x6CE8;&#x518C;&#x65B0;&#x7684;callback">1.2.1. &#x6CE8;&#x518C;&#x65B0;&#x7684;callback</a></li><li><a href="#&#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback">1.2.2. &#x5220;&#x9664;&#x73B0;&#x6709;&#x7684;callback</a></li><li><a href="#&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback">1.2.3. &#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;callback</a></li><li><a href="#&#x6CE8;&#x518C;callback&#x987A;&#x5E8F;">1.2.4. &#x6CE8;&#x518C;callback&#x987A;&#x5E8F;</a></li><li><a href="#&#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;">1.2.5. &#x9884;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;</a></li></ul></ul></ul></div><a href="#&#x5F00;&#x53D1;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="advanced.html#l" class="navigation navigation-prev " aria-label="Previous page: 1.6.6. 日志">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="development.html#a" class="navigation navigation-next " aria-label="Next page: 1.7.1 架构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.7. 开发","level":"1.7","depth":1,"next":{"title":"1.7.1 架构","level":"1.7.1","depth":2,"anchor":"#a","path":"development.md","ref":"development.md#a","articles":[]},"previous":{"title":"1.6.6. 日志","level":"1.6.6","depth":2,"anchor":"#l","path":"advanced.md","ref":"advanced.md#l","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","highlight","livereload","-search","sharing","anchors","anchor-navigation-ex","baidu","splitter","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy JasperXu 2017","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"sans","size":2,"theme":"night"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false},"baidu":{"token":"4d44f3d73e174019517a2236d827eda8"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"JasperXu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GORM 中文","language":"zh-hans","gitbook":"3.x.x","description":"GORM 中文翻译"},"file":{"path":"development.md","mtime":"2017-01-10T18:47:26.776Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T14:06:22.107Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>
+

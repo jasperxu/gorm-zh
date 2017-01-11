@@ -1,0 +1,824 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.6. 高级用法 · GORM 中文</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="JasperXu">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="advanced.html" />
+    
+    
+    <link rel="prev" href="callbacks.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.1. 快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database.html">
+            
+                <a href="database.html">
+            
+                    
+                    1.2. 数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="database.html">
+            
+                <a href="database.html#dbc">
+            
+                    
+                    1.2.1. 数据库连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="database.html">
+            
+                <a href="database.html#m">
+            
+                    
+                    1.2.2. 迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    1.3. 模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="models.html">
+            
+                <a href="models.html#md">
+            
+                    
+                    1.3.1. 模型定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="models.html">
+            
+                <a href="models.html#c">
+            
+                    
+                    1.3.2. 约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="associations.html">
+            
+                <a href="associations.html">
+            
+                    
+                    1.3.3. 关联
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="associations.html">
+            
+                <a href="associations.html#bt">
+            
+                    
+                    1.3.3.1 属于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="associations.html">
+            
+                <a href="associations.html#ho">
+            
+                    
+                    1.3.3.2 包含一个
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="associations.html">
+            
+                <a href="associations.html#hm">
+            
+                    
+                    1.3.3.3 包含多个
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="associations.html">
+            
+                <a href="associations.html#mtm">
+            
+                    
+                    1.3.3.4 多对多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="associations.html">
+            
+                <a href="associations.html#p">
+            
+                    
+                    1.3.3.5 多种包含
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="associations.html">
+            
+                <a href="associations.html#am">
+            
+                    
+                    1.3.3.6 关联模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="crud.html">
+            
+                <a href="crud.html">
+            
+                    
+                    1.4. CRUD:读写数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="crud.html">
+            
+                <a href="crud.html#c">
+            
+                    
+                    1.4.1 创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="crud.html">
+            
+                <a href="crud.html#q">
+            
+                    
+                    1.4.2 查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="crud.html">
+            
+                <a href="crud.html#p">
+            
+                    
+                    1.4.3 预加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="crud.html">
+            
+                <a href="crud.html#u">
+            
+                    
+                    1.4.4 更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="crud.html">
+            
+                <a href="crud.html#d">
+            
+                    
+                    1.4.5 删除\/软删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="crud.html">
+            
+                <a href="crud.html#a">
+            
+                    
+                    1.4.6 关联
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="callbacks.html">
+            
+                <a href="callbacks.html">
+            
+                    
+                    1.5. Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="advanced.html">
+            
+                <a href="advanced.html">
+            
+                    
+                    1.6. 高级用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="advanced.html">
+            
+                <a href="advanced.html#eh">
+            
+                    
+                    1.6.1. 错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="advanced.html">
+            
+                <a href="advanced.html#t">
+            
+                    
+                    1.6.2. 事物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="advanced.html">
+            
+                <a href="advanced.html#sb">
+            
+                    
+                    1.6.3. SQL构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="advanced.html">
+            
+                <a href="advanced.html#g">
+            
+                    
+                    1.6.4. 通用数据库接口sql.DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="advanced.html">
+            
+                <a href="advanced.html#cpk">
+            
+                    
+                    1.6.5. 复合主键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="advanced.html">
+            
+                <a href="advanced.html#l">
+            
+                    
+                    1.6.6. 日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="development.html">
+            
+                <a href="development.html">
+            
+                    
+                    1.7. 开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="development.html">
+            
+                <a href="development.html#a">
+            
+                    
+                    1.7.1 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="development.html">
+            
+                <a href="development.html#w">
+            
+                    
+                    1.7.2 写插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="changelog.html">
+            
+                <a href="changelog.html">
+            
+                    
+                    1.8. 更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    1.9. 译者日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.6. 高级用法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;"><a name="&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;" class="plugin-anchor" href="#&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;</h1>
+<h2 id="eh"><a name="eh" class="plugin-anchor" href="#eh"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x5904;&#x7406; </h2>
+<p>&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#xFF0C;GORM&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;<code>*DB</code>&#x7684;<code>Error</code>&#x5B57;&#x6BB5;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">if</span> err := db.Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).First(&amp;user).Error; err != <span class="hljs-literal">nil</span> {
+    <span class="hljs-comment">// &#x9519;&#x8BEF;&#x5904;&#x7406;...</span>
+}
+
+<span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x9519;&#x8BEF;&#x53D1;&#x751F;&#xFF0C;&#x7528;`GetErrors`&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;`[]error`</span>
+db.First(&amp;user).Limit(<span class="hljs-number">10</span>).Find(&amp;users).GetErrors()
+
+<span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x5426;&#x8FD4;&#x56DE;RecordNotFound&#x9519;&#x8BEF;</span>
+db.Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;hello world&quot;</span>).First(&amp;user).RecordNotFound()
+
+<span class="hljs-keyword">if</span> db.Model(&amp;user).Related(&amp;credit_card).RecordNotFound() {
+    <span class="hljs-comment">// &#x6CA1;&#x6709;&#x4FE1;&#x7528;&#x5361;&#x88AB;&#x53D1;&#x73B0;&#x5904;&#x7406;...</span>
+}
+</code></pre>
+<h2 id="t"><a name="t" class="plugin-anchor" href="#t"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x7269; </h2>
+<p>&#x8981;&#x5728;&#x4E8B;&#x52A1;&#x4E2D;&#x6267;&#x884C;&#x4E00;&#x7EC4;&#x64CD;&#x4F5C;&#xFF0C;&#x4E00;&#x822C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x5F00;&#x59CB;&#x4E8B;&#x52A1;</span>
+tx := db.Begin()
+
+<span class="hljs-comment">// &#x5728;&#x4E8B;&#x52A1;&#x4E2D;&#x505A;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#xFF08;&#x4ECE;&#x8FD9;&#x4E00;&#x70B9;&#x4F7F;&#x7528;&apos;tx&apos;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&apos;db&apos;&#xFF09;</span>
+tx.Create(...)
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;</span>
+tx.Rollback()
+
+<span class="hljs-comment">// &#x6216;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</span>
+tx.Commit()
+</code></pre>
+<h3 id="&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;"><a name="&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;" class="plugin-anchor" href="#&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;</h3>
+<pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">CreateAnimals</span><span class="hljs-params">(db *gorm.DB)</span> <span class="hljs-title">err</span></span> {
+  tx := db.Begin()
+  <span class="hljs-comment">// &#x6CE8;&#x610F;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x5728;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;tx&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x53E5;&#x67C4;</span>
+
+  <span class="hljs-keyword">if</span> err := tx.Create(&amp;Animal{Name: <span class="hljs-string">&quot;Giraffe&quot;</span>}).Error; err != <span class="hljs-literal">nil</span> {
+     tx.Rollback()
+     <span class="hljs-keyword">return</span> err
+  }
+
+  <span class="hljs-keyword">if</span> err := tx.Create(&amp;Animal{Name: <span class="hljs-string">&quot;Lion&quot;</span>}).Error; err != <span class="hljs-literal">nil</span> {
+     tx.Rollback()
+     <span class="hljs-keyword">return</span> err
+  }
+
+  tx.Commit()
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<h2 id="sb"><a name="sb" class="plugin-anchor" href="#sb"><i class="fa fa-link" aria-hidden="true"></i></a>SQL&#x6784;&#x5EFA; </h2>
+<h3 id="&#x6267;&#x884C;&#x539F;&#x751F;sql"><a name="&#x6267;&#x884C;&#x539F;&#x751F;sql" class="plugin-anchor" href="#&#x6267;&#x884C;&#x539F;&#x751F;sql"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;&#x539F;&#x751F;SQL</h3>
+<pre><code class="lang-go">db.Exec(<span class="hljs-string">&quot;DROP TABLE users;&quot;</span>)
+db.Exec(<span class="hljs-string">&quot;UPDATE orders SET shipped_at=? WHERE id IN (?)&quot;</span>, time.Now, []<span class="hljs-keyword">int64</span>{<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,<span class="hljs-number">33</span>})
+
+<span class="hljs-comment">// Scan</span>
+<span class="hljs-keyword">type</span> Result <span class="hljs-keyword">struct</span> {
+    Name <span class="hljs-keyword">string</span>
+    Age  <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">var</span> result Result
+db.Raw(<span class="hljs-string">&quot;SELECT name, age FROM users WHERE name = ?&quot;</span>, <span class="hljs-number">3</span>).Scan(&amp;result)
+</code></pre>
+<h3 id="sqlrow--sqlrows"><a name="sqlrow--sqlrows" class="plugin-anchor" href="#sqlrow--sqlrows"><i class="fa fa-link" aria-hidden="true"></i></a>sql.Row &amp; sql.Rows</h3>
+<p>&#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E3A;<code>*sql.Row</code>&#x6216;<code>*sql.Rows</code></p>
+<pre><code class="lang-go">row := db.Table(<span class="hljs-string">&quot;users&quot;</span>).Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).Select(<span class="hljs-string">&quot;name, age&quot;</span>).Row() <span class="hljs-comment">// (*sql.Row)</span>
+row.Scan(&amp;name, &amp;age)
+
+rows, err := db.Model(&amp;User{}).Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).Select(<span class="hljs-string">&quot;name, age, email&quot;</span>).Rows() <span class="hljs-comment">// (*sql.Rows, error)</span>
+<span class="hljs-keyword">defer</span> rows.Close()
+<span class="hljs-keyword">for</span> rows.Next() {
+    ...
+    rows.Scan(&amp;name, &amp;age, &amp;email)
+    ...
+}
+
+<span class="hljs-comment">// Raw SQL</span>
+rows, err := db.Raw(<span class="hljs-string">&quot;select name, age, email from users where name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).Rows() <span class="hljs-comment">// (*sql.Rows, error)</span>
+<span class="hljs-keyword">defer</span> rows.Close()
+<span class="hljs-keyword">for</span> rows.Next() {
+    ...
+    rows.Scan(&amp;name, &amp;age, &amp;email)
+    ...
+}
+</code></pre>
+<h3 id="&#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sqlrows&#x7684;scan"><a name="&#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sqlrows&#x7684;scan" class="plugin-anchor" href="#&#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sqlrows&#x7684;scan"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sql.Rows&#x7684;Scan</h3>
+<pre><code class="lang-go">rows, err := db.Model(&amp;User{}).Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).Select(<span class="hljs-string">&quot;name, age, email&quot;</span>).Rows() <span class="hljs-comment">// (*sql.Rows, error)</span>
+<span class="hljs-keyword">defer</span> rows.Close()
+
+<span class="hljs-keyword">for</span> rows.Next() {
+  <span class="hljs-keyword">var</span> user User
+  db.ScanRows(rows, &amp;user)
+  <span class="hljs-comment">// do something</span>
+}
+</code></pre>
+<h2 id="g"><a name="g" class="plugin-anchor" href="#g"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x7528;&#x6570;&#x636E;&#x5E93;&#x63A5;&#x53E3;sql.DB </h2>
+<p>&#x4ECE;<code>*gorm.DB</code>&#x8FDE;&#x63A5;&#x83B7;&#x53D6;&#x901A;&#x7528;&#x6570;&#x636E;&#x5E93;&#x63A5;&#x53E3;<a href="http://golang.org/pkg/database/sql/#DB" target="_blank">*sql.DB</a></p>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x83B7;&#x53D6;&#x901A;&#x7528;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;`*sql.DB`&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x51FD;&#x6570;</span>
+db.DB()
+
+<span class="hljs-comment">// Ping</span>
+db.DB().Ping()
+</code></pre>
+<h3 id="&#x8FDE;&#x63A5;&#x6C60;"><a name="&#x8FDE;&#x63A5;&#x6C60;" class="plugin-anchor" href="#&#x8FDE;&#x63A5;&#x6C60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x63A5;&#x6C60;</h3>
+<pre><code class="lang-go">db.DB().SetMaxIdleConns(<span class="hljs-number">10</span>)
+db.DB().SetMaxOpenConns(<span class="hljs-number">100</span>)
+</code></pre>
+<h2 id="cpk"><a name="cpk" class="plugin-anchor" href="#cpk"><i class="fa fa-link" aria-hidden="true"></i></a>&#x590D;&#x5408;&#x4E3B;&#x952E; </h2>
+<p>&#x5C06;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E3B;&#x952E;&#x4EE5;&#x542F;&#x7528;&#x590D;&#x5408;&#x4E3B;&#x952E;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Product <span class="hljs-keyword">struct</span> {
+    ID           <span class="hljs-keyword">string</span> <span class="hljs-string">`gorm:&quot;primary_key&quot;`</span>
+    LanguageCode <span class="hljs-keyword">string</span> <span class="hljs-string">`gorm:&quot;primary_key&quot;`</span>
+}
+</code></pre>
+<h2 id="l"><a name="l" class="plugin-anchor" href="#l"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7; </h2>
+<p>Gorm&#x6709;&#x5185;&#x7F6E;&#x7684;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5668;&#x652F;&#x6301;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4F1A;&#x6253;&#x5370;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;</p>
+<pre><code class="lang-go"><span class="hljs-comment">// &#x542F;&#x7528;Logger&#xFF0C;&#x663E;&#x793A;&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;</span>
+db.LogMode(<span class="hljs-literal">true</span>)
+
+<span class="hljs-comment">// &#x7981;&#x7528;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5668;&#xFF0C;&#x4E0D;&#x663E;&#x793A;&#x4EFB;&#x4F55;&#x65E5;&#x5FD7;</span>
+db.LogMode(<span class="hljs-literal">false</span>)
+
+<span class="hljs-comment">// &#x8C03;&#x8BD5;&#x5355;&#x4E2A;&#x64CD;&#x4F5C;&#xFF0C;&#x663E;&#x793A;&#x6B64;&#x64CD;&#x4F5C;&#x7684;&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;</span>
+db.Debug().Where(<span class="hljs-string">&quot;name = ?&quot;</span>, <span class="hljs-string">&quot;jinzhu&quot;</span>).First(&amp;User{})
+</code></pre>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;</h3>
+<p>&#x53C2;&#x8003;GORM&#x7684;&#x9ED8;&#x8BA4;&#x8BB0;&#x5F55;&#x5668;&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;&#x5B83;<a href="https://github.com/jinzhu/gorm/blob/master/logger.go" target="_blank">https://github.com/jinzhu/gorm/blob/master/logger.go</a></p>
+<pre><code class="lang-go">db.SetLogger(gorm.Logger{revel.TRACE})
+db.SetLogger(log.New(os.Stdout, <span class="hljs-string">&quot;\r\n&quot;</span>, <span class="hljs-number">0</span>))
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; JasperXu 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-01-11 02:47:26
+</span></footer><div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#"></a></p><li><a href="#&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;">1. &#x9AD8;&#x7EA7;&#x7528;&#x6CD5;</a></li><ul><li><a href="#eh">1.1. &#x9519;&#x8BEF;&#x5904;&#x7406; </a></li><li><a href="#t">1.2. &#x4E8B;&#x7269; </a></li><ul><li><a href="#&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;">1.2.1. &#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4F8B;&#x5B50;</a></li></ul><li><a href="#sb">1.3. SQL&#x6784;&#x5EFA; </a></li><ul><li><a href="#&#x6267;&#x884C;&#x539F;&#x751F;sql">1.3.1. &#x6267;&#x884C;&#x539F;&#x751F;SQL</a></li><li><a href="#sqlrow--sqlrows">1.3.2. sql.Row &amp; sql.Rows</a></li><li><a href="#&#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sqlrows&#x7684;scan">1.3.3. &#x8FED;&#x4EE3;&#x4E2D;&#x4F7F;&#x7528;sql.Rows&#x7684;Scan</a></li></ul><li><a href="#g">1.4. &#x901A;&#x7528;&#x6570;&#x636E;&#x5E93;&#x63A5;&#x53E3;sql.DB </a></li><ul><li><a href="#&#x8FDE;&#x63A5;&#x6C60;">1.4.1. &#x8FDE;&#x63A5;&#x6C60;</a></li></ul><li><a href="#cpk">1.5. &#x590D;&#x5408;&#x4E3B;&#x952E; </a></li><li><a href="#l">1.6. &#x65E5;&#x5FD7; </a></li><ul><li><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;">1.6.1. &#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;</a></li></ul></ul></ul></div><a href="#&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;" id="goTop"><i class="fa fa-arrow-up"></i></a>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="callbacks.html" class="navigation navigation-prev " aria-label="Previous page: 1.5. Callbacks">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="advanced.html#eh" class="navigation navigation-next " aria-label="Next page: 1.6.1. 错误处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.6. 高级用法","level":"1.6","depth":1,"next":{"title":"1.6.1. 错误处理","level":"1.6.1","depth":2,"anchor":"#eh","path":"advanced.md","ref":"advanced.md#eh","articles":[]},"previous":{"title":"1.5. Callbacks","level":"1.5","depth":1,"path":"callbacks.md","ref":"callbacks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["fontsettings","highlight","livereload","-search","sharing","anchors","anchor-navigation-ex","baidu","splitter","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy JasperXu 2017","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"sans","size":2,"theme":"night"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false},"baidu":{"token":"4d44f3d73e174019517a2236d827eda8"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"JasperXu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GORM 中文","language":"zh-hans","gitbook":"3.x.x","description":"GORM 中文翻译"},"file":{"path":"advanced.md","mtime":"2017-01-10T18:47:26.772Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T14:06:22.107Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>
+
