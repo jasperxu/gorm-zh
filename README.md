@@ -1,6 +1,6 @@
 # GORM 中文文档
 
-[https://jasperxu.github.io/gorm-zh/](https://jasperxu.github.io/gorm-zh/)
+[http://gorm.book.jasperxu.com/](http://gorm.book.jasperxu.com/)
 
 Golang写的，开发人员友好的ORM库。
 ## 概述
